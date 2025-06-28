@@ -1,23 +1,21 @@
 
-import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
-import FeaturesSection from "@/components/FeaturesSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
+import { useState } from "react";
+import { ThemeHeader } from "@/components/ThemeHeader";
+import { ThemePreview } from "@/components/ThemePreview";
+import { CustomizationSidebar } from "@/components/CustomizationSidebar";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <HeroSection />
-        <FeaturesSection />
-        <TestimonialsSection />
-        <CTASection />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-gray-50">
+        <ThemeHeader />
+        <div className="flex h-[calc(100vh-64px)]">
+          <CustomizationSidebar />
+          <ThemePreview />
+        </div>
+      </div>
+    </ThemeProvider>
   );
 };
 
