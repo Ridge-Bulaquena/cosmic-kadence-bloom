@@ -4,6 +4,7 @@ import { ThemeHeader } from "@/components/ThemeHeader";
 import { ThemePreview } from "@/components/ThemePreview";
 import { CustomizationSidebar } from "@/components/CustomizationSidebar";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import FeaturedArticlesGrid from "@/components/FeaturedArticlesGrid";
 
 const Index = () => {
   return (
@@ -12,7 +13,10 @@ const Index = () => {
         <ThemeHeader />
         <div className="flex h-[calc(100vh-64px)]">
           <CustomizationSidebar />
-          <ThemePreview />
+          <div className="flex-1 overflow-auto">
+            <ThemePreview />
+            <FeaturedArticlesGrid />
+          </div>
         </div>
       </div>
     </ThemeProvider>
